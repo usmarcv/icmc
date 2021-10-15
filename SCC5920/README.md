@@ -1,1 +1,1 @@
-	 Projeto da disciplina de Mineração de Dados Não Estruturados
+Projeto da disciplina de Mineração de Dados Não Estruturados
