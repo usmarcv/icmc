@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+#define endl '\n'
+#define _ ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+
+typedef long long ll;
+
+using namespace std;
+
+int main(){_
+
+  int t, n;
+	map <int, int> snowflakes;
+
+	cin >> t;
+
+	while(t--){
+		
+		cin >> n;	
+		
+		snowflakes.clear();
+		
+		int ans = count = block = 0;
+		for(int i = 0; i < n; ++i){
+				int snow;
+				cin >> snow;
+				int sf = snowflakes[snow];	
+				
+				if(sf != 0){
+					block = max(block, sf);
+					count = i - block - 1;
+				}
+
+				cont++;
+				snowflaes[sf] = i;
+				ans = max(ans, count);
+		}			
+					
+
+		cout << ans << endl;
+	}
+
+	return 0;
+}
+
+

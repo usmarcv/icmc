@@ -1,0 +1,55 @@
+#include <bits/stdc++.h>
+#define endl '\n'
+#define _ ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+
+typedef long long ll;
+
+using namespace std;
+
+int main(){_
+
+	int dragons, knights;
+
+	while(cin >> dragons >> knights && dragons && knights){
+
+		int vet_dragons[dragons+1];
+		for(int i = 0; i < dragons; ++i){
+					cin >> vet_dragons;
+		}
+
+		int vet_knights[knights+1];
+		for(int i = 0; i < knights; ++i){
+					cin >> vet_knights;
+		}
+
+		sort(vet_dragons.begin(), vet_dragons.end());
+		sort(vet_knights.begin(), vet_knights.end());
+
+		if(dragons > knights){
+			cout << "Loowater is doomed!" << endl;
+		}
+
+		int k = dragons;
+		int sum = 0;
+		for(int i = 0, j = 0; i < vet_knights.size() and vet_dragons.size(); ++i){
+				if(vet_knights[i] >= vet_dragons[j]){
+					sum += vet_knigths[i];
+					j++;
+					k--;
+				}
+
+		}
+		
+		if(k == 0) cout << sum << endl
+	
+		/*
+		memset(vet_dragons, 0, sizeof(int));
+		memset(vet_knights, 0, sizeof(int));
+		*/
+	}
+
+	
+  return 0;
+}
+
+
