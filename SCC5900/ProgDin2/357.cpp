@@ -25,7 +25,7 @@ int main(){_
 	int cents;
 	while(cin >> cents){
 		if(ways[cents] == 1){
-				printf("There is only 1 way to produce %lld cents change.\n", cents);
+				printf("There is only 1 way to produce %d cents change.\n", cents);
 		}else{
 				printf("There are %lld ways to produce %d cents change.\n", ways[cents], cents);
 		}
