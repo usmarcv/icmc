@@ -16,23 +16,24 @@ typedef vector<int> vi;
 #define COLOR 0
 
 int N;
-vector<vii> adjList(200);
+
 vi color;
+vector<vii>adjList(201);
 
 
 bool bipartite(int u){
 	
 	queue<int> q;
+	bool isBipartite = true;
 
 	color[u] = 0;
 	q.push(u);
 
 	while(!q.empty()){
 		
-		int k = q.front();
-		q.pop();
-
-		for(int i = 0; i < adjList[k].size(); ++i){
+		int k = q.front(); q.pop();
+		
+		for(int i = 0; i < (int)adjList[k].size(); i++){
 
 				ii v = adjList[k][i];			
 			
@@ -42,14 +43,14 @@ bool bipartite(int u){
 						q.push(v.first);
 				
 				}else if(color[v.first] == color[k]){
-						return false;
+									isBipartite = false;
+									break;
 				}
-
 		}
 	
 	}
 
-	return true;
+	return isBipartite;
 
 }
 
@@ -57,20 +58,24 @@ bool bipartite(int u){
 int main(){_
 
 
-	while(cin >> N and N){
+	while(cin >> N && N){
 		
 		int l, u, v;
-		color.assign(N, NOTCOLOR);		
-
+	
+		color.assign(N, NOTCOLOR);
+		//iadjList.assign(N, COLOR);
+	
 		cin >> l;
 		while(l--){
 			
 			cin >> u >> v;
-			adjList[u].push_back(make_pair(v,0));
-			adjList[v].push_back(make_pair(u,0));
+			adjList[u-1].push_back(make_pair(v-1,0));
+			adjList[v-1].push_back(make_pair(u-1,0));
 
 		}		
 		
+		//printAdjList();
+
 		if(bipartite){
 				cout << "BICOLORABLE." << endl;
 		}else{
