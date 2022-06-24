@@ -25,14 +25,40 @@ void solve(ll k){
 }
 
 
+void find_all(ll n){
+	
+	vector<int> x;
+	int s = sqrt(n);
+
+	for(int i = 1; i <= s; i++){
+			if(n % i){
+				if(n/i == i){
+					x.push_back(i);
+				}else{
+					x.push_back(i);
+					x.push_back(n/i);
+				}
+			}
+	}
+	
+	//	x.push_back(n);
+
+	for(int i = 0; i < x.size(); i++){
+				printf("%d ",x[i]);
+	}
+	
+	printf("\n");
+
+}
+
 int main(){_
 
 	ll n;
 
 	cin >> n;
 
-	solve(n);
-	
+	find_all(n);
+
 	return 0;
 
 }

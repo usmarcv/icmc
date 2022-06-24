@@ -15,7 +15,6 @@ typedef vector<ii> vii;
 typedef vector<int> vi;
 #define NOTCOLOR -1
 #define BLACK 0
-#define WHITE 1	
 
 // ----------------------------------
 
