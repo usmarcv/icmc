@@ -85,9 +85,14 @@ int main(){_
 
    	vector<Point> ans = convex_hull(points);
 		
-	cout << fixed << setprecision(6) << perimeter(ans) << "\n";  
+		double answer = perimeter(ans);
+		
+		if(((int)answer * 100) == (answer * 100))
+				cout << (int)answer << endl;
+		else
+				cout << fixed << setprecision(6) << perimeter(ans) << "\n";  
 	
-	//printf("%.6lf\n", perimeter(ans));
+		//printf("%.6lf\n", perimeter(ans));
   
     return 0;
 }
